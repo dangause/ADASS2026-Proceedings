@@ -1,232 +1,139 @@
-% This is the ADASS_template.tex LaTeX file, 24 Oct 2025.
-% It is based on the ASP general author template file, but modified to reflect the specific
-% requirements of the ADASS proceedings.
-
-% This is the aspauthor.tex LaTeX file
-% Copyright 2021, Astronomical Society of the Pacific Conference Series
-% Revision:  29 November 2021
-
-% To compile, at the command line positioned at this folder, type:
-% pdflatex ADASS_template
-% pdflatex ADASS_template
-% This will create a file called ADASS_template.pdf
+% P108: MANNA, ADASS XXXVI (2026) poster proceedings.
+% Built from the ADASS_template.tex LaTeX file, 24 Oct 2025, itself based on the
+% ASP general author template (aspauthor.tex, Copyright 2021, Astronomical
+% Society of the Pacific Conference Series, revision 29 November 2021).
+% Condensed from the AAS manuscript in dangause/manna-paper (main, 19064da).
+%
+% Build and check from this folder:  make pdf  and  make check
+% ADASS rules: no \usepackage other than asp2023, no \newcommand or
+% \renewcommand, PNG/JPG figures named P108_f<n>, 4 pages including references.
 
 \documentclass[11pt,twoside]{article}
 
-% Do NOT use ANY packages other than asp2023. 
+% Do NOT use ANY packages other than asp2023.
 \usepackage{asp2023}
 
 \aspSuppressVolSlug
 \resetcounters
 
-% References must all use BibTeX entries in a .bibfile.
-% References must be cited in the text using \citet{} or \citep{}.
-% Do not use \cite{}.
-% See ManuscriptInstructions.pdf for more details
 \bibliographystyle{asp2021}
 
-% The ``markboth'' line sets up the running heads for the paper.
-% 1 author: "Surname"
-% 2 authors: "Surname1 and Surname2"
-% 3 authors: "Surname1, Surname2, and Surname3"
-% >3 authors: "Surname1 et al."
-% Replace ``Short Title'' with the actual paper title, shortened if necessary.
-% Use mixed case type for the shortened title
-% Ensure shortened title does not cause an overfull hbox LaTeX error
-% See ASPmanual2010.pdf 2.1.4  and ManuscriptInstructions.pdf for more details
-\markboth{Author1, Author2, and Author3}{Short Title}
+\markboth{Gause et al.}{MANNA: An MCP Architecture for Astronomical Archives}
 
 \begin{document}
 
-\title{ADASS Author Template with Long Title}
+\title{MANNA: An MCP Architecture for NOIRLab, NRAO, and Additional Archives}
 
-% Note the position of the comma between the author name and the 
-% affiliation number.
-% Authors surnames should come after first names or initials, eg John Smith, or J. Smith.
-% Author names should be separated by commas.
-% The final author should be preceded by "and".
-% Affiliations should not be repeated across multiple \affil commands. If several
-% authors share an affiliation this should be in a single \affil which can then
-% be referenced for several author names. If only one affiliation, no footnotes are needed.
-% See ManuscriptInstructions.pdf and ASP's manual2010.pdf 3.1.4 for more details
-\author{Sample~Author1,$^1$ Sample~Author2,$^2$ and Sample~Author3$^2$}
-\affil{$^1$Institution Name, Institution City, State/Province, Country; \email{AuthorEmail@email.edu}}
-\affil{$^2$Institution Name, Institution City, State/Province, Country}
+\author{Daniel~Gause,$^1$ Robert~Nikutta,$^2$ Brian~Mason,$^1$ Adele~Plunkett,$^1$ Ryan~Loomis,$^1$ Stephanie~Juneau,$^2$ Stella~S.~R.~Offner,$^3$ and Eric~J.~Murphy$^1$}
+\affil{$^1$National Radio Astronomy Observatory, Charlottesville, VA, USA; \email{dgause@nrao.edu}}
+\affil{$^2$NSF NOIRLab, Tucson, AZ, USA}
+\affil{$^3$Department of Astronomy, The University of Texas at Austin, Austin, TX, USA}
 
-% This section is for ADS Processing.  There must be one line per author. paperauthor has 9 arguments.
-\paperauthor{Sample~Author1}{Author1Email@email.edu}{ORCID_Or_Blank}{Author1 Institution}{Author1 Department}{City}{State/Province}{Postal Code}{Country}
-\paperauthor{Sample~Author2}{Author2Email@email.edu}{ORCID_Or_Blank}{Author2 Institution}{Author2 Department}{City}{State/Province}{Postal Code}{Country}
-\paperauthor{Sample~Author3}{Author3Email@email.edu}{ORCID_Or_Blank}{Author3 Institution}{Author3 Department}{City}{State/Province}{Postal Code}{Country}
+% This section is for ADS Processing. One line per author; paperauthor has 9 arguments.
+\paperauthor{Daniel~Gause}{dgause@nrao.edu}{0009-0004-8062-3810}{National Radio Astronomy Observatory}{}{Charlottesville}{VA}{22903}{USA}
+\paperauthor{Robert~Nikutta}{robert.nikutta@noirlab.edu}{0000-0002-7052-6900}{NSF NOIRLab}{}{Tucson}{AZ}{85719}{USA}
+\paperauthor{Brian~Mason}{bmason@nrao.edu}{0000-0002-8472-836X}{National Radio Astronomy Observatory}{}{Charlottesville}{VA}{22903}{USA}
+\paperauthor{Adele~Plunkett}{aplunket@nrao.edu}{0000-0002-9912-5705}{National Radio Astronomy Observatory}{}{Charlottesville}{VA}{22903}{USA}
+\paperauthor{Ryan~Loomis}{rloomis@nrao.edu}{0000-0002-8932-1219}{National Radio Astronomy Observatory}{}{Charlottesville}{VA}{22903}{USA}
+\paperauthor{Stephanie~Juneau}{stephanie.juneau@noirlab.edu}{0000-0002-0000-2394}{NSF NOIRLab}{}{Tucson}{AZ}{85719}{USA}
+\paperauthor{Stella~S.~R.~Offner}{soffner@utexas.edu}{0000-0003-1252-9916}{The University of Texas at Austin}{Department of Astronomy}{Austin}{TX}{78712}{USA}
+\paperauthor{Eric~J.~Murphy}{emurphy@nrao.edu}{0000-0001-7089-7325}{National Radio Astronomy Observatory}{}{Charlottesville}{VA}{22903}{USA}
 
-% There should be one \aindex line (commented out) for each author. These are used to
-% build up the author index for the Proceedings. The surname must come first, followed by
-% initials. Note the use of ~ before each initial to control spacing.
-% The \author entries (see above) have surname last. These \aindex entries have
-% surname first.
-% The Aindex.py command willl create them for you after you have constructed the \author
-% The first entry should be the first author, for bold-facing the author index page-reference
+% Author index entries, surname first.
+%\aindex{Gause,~D.}
+%\aindex{Nikutta,~R.}
+%\aindex{Mason,~B.}
+%\aindex{Plunkett,~A.}
+%\aindex{Loomis,~R.}
+%\aindex{Juneau,~S.}
+%\aindex{Offner,~S.~S.~R.}
+%\aindex{Murphy,~E.~J.}
 
-%\aindex{FistAuthor1,~S.~A.}
-%\aindex{Author2,~S.~B.}
-%\aindex{Author3,~S.}
-
+% Subject index entries, all existing terms from Index.py.
+%\ssindex{International Virtual Observatory Alliance (IVOA)}
+%\ssindex{databases!query language!ADQL}
+%\ssindex{archives!individual!ALMA Science Archive}
+%\ssindex{archives!multiple!National Radio Astronomy Observatory (NRAO) data archive}
+%\ssindex{Artificial intelligence}
 
 \begin{abstract}
-This is the ADASS 2025 author template file.  This is based on the
-Astronomical Society of the Pacific (ASP) 2021 template, but has been
-modified to reflect the specific ADASS requirements.
+While many astronomical data archives implement the same set of standards defined by the International Virtual Observatory Alliance (IVOA), differences in underlying data and architectural implementations necessitate significant archive-specific knowledge. We present MANNA (MCP Architecture for NOIRLab, NRAO, and Additional Archives), a Model Context Protocol (MCP) server that provides AI agents with tools for archive discovery and data querying. With a custom evaluation framework, we ran archive tasks with and without MANNA for one open-weight and three Anthropic Claude models. MANNA reduced the time needed per solved task for all four models and substantially increased the number of tasks passed by the smallest Claude model. The differences were larger when the time and turns per task were limited. MANNA is compatible with all IVOA-based astronomical archives.
 \end{abstract}
 
-% These lines show examples of subject index entries. At this stage these have to commented
-% out, and need to be on separate lines. Eventually, they will be automatically uncommented
-% and used to generate entries in the Subject Index at the end of the Proceedings volume.
-% Don't leave these in! - replace them with ones relevant to your paper.
-%\ssindex{FOOBAR!conference!ADASS 2019}
-%\ssindex{FOOBAR!organisations!ASP}
+\section{Introduction}
+\label{sec:intro}
+Most large astronomical archives offer programmatic access through services defined by the International Virtual Observatory Alliance (IVOA), such as the Table Access Protocol (TAP). In practice these standards have been implemented unevenly: archives differ in the tables they expose, the column names they use, the ADQL functions they support, and whether a query must run asynchronously. Using an archive through its IVOA services therefore still requires knowledge of that particular archive.
 
-% These lines show examples of ASCL index entries. At this stage these have to commented
-% out, and need to be on separate lines. Eventually, they will be automatically uncommented
-% and used to generate entries in the ASCL Index at the end of the Proceedings volume.
-% The ascl.py command will scan your paper on possible code names.
-% Don't leave these in! - replace them with ones relevant to your paper.
-%\ooindex{FOOBAR, ascl:1101.010}
+AI agents built on large language models can write and submit such queries, but what they know about an archive comes from their training data and from public documentation, both of which may be incomplete or out of date. An agent can often find the coordinates of a target or the name of the archive that holds its data, yet fail to retrieve the data itself, because it lacks details such as the address of the query service, the table that holds the observations, or the query syntax the service accepts. This necessitates expensive iteration through trial and error, and can fundamentally limit agentic capabilities. This paper presents MANNA (MCP Architecture for NOIRLab, NRAO, and Additional Archives), an MCP server designed to help AI agents overcome these limitations. The Model Context Protocol \citep[MCP;][]{Anthropic2024mcp} is an open standard for connecting AI agents to external tools and data sources. Section~\ref{sec:arch} describes the server, Section~\ref{sec:eval} its evaluation with four language models, and Section~\ref{sec:discussion} our conclusions.
 
+\section{Architecture}
+\label{sec:arch}
+MANNA is a Python MCP server built with the FastMCP framework \citep{fastmcp}. It consists of tools (core and workflow) designed to facilitate the use of astronomical archives' IVOA services, security- and context-window-aware result handling, and archive notes that provide supplementary information on specific archives (Figure~\ref{fig:arch}).
 
-\section{The Template}
-To fill in this template, make sure that you read and follow the ASPCS Instructions for Authors and Editors available for download online. Further hints and tips for including graphics, tables, citations, and other formatting helps are available there. With this template, you should have received a copy of the specific ADASS manuscript instructions, and you should also read these.
+\articlefigure[width=\textwidth]{P108_f1.png}{fig:arch}{Schematic of MANNA. The AI agent calls MANNA's tools over MCP; the archive notes supply archive-specific knowledge to the tools and are re-checked against the archives by the note audit.}
 
-\subsection{The Author Checklist}
-The following checklist should be followed when writing a submission to a conference proceedings to be published by the ASP for ADASS. The references are to sections in the ADASS manuscript instructions.\footnote{Most URLs should be in a footnote like this one.  In this case, you can download the online material from \url{http://www.adass.org}.} 
+{\emergencystretch=1.5em MANNA's core tools cover each step of retrieving data through IVOA services, from resolving a target name to following an asynchronous job, and include \texttt{describe\_table}, \texttt{resolve\_target\_name}, \texttt{search\_ivoa\_registry}, and \texttt{run\_adql\_query}, which submits queries to TAP services \citep{2019ivoa.spec.0927D}. Its workflow tools chain several of these steps into one call, which reduces the number of decisions the agent has to make; \texttt{count\_\allowbreak observations\_\allowbreak near\_target}, for example, resolves a target, selects an archive, and runs that archive's positional count.\par}
 
-\begin{itemize}
-\checklistitemize
+By default, \texttt{run\_adql\_query} submits an ADQL query \citep{2023ivoa.spec.1215M} synchronously. If the archive has not answered within 20 seconds, or the result exceeds 200 rows or 48\,KB, MANNA resubmits the query as an asynchronous job and returns the job URL with a short Python recipe for fetching the result, so that large tables stay out of the agent's context window.
 
-\item References must all use BibTeX entries in a .bib file. No use of \verb"\bibitem"! (Even though some older ASP templates have them.) (See References.)
-\item All references must be cited in the text, usually using \verb"\citet" or \verb"\citep".  Do not use \verb"\cite". (See References.)
-\item No LaTeX warnings. Particularly, no overfull hboxes or unresolved references. (See LaTeX warnings and errors.)
-\item No use of \verb"\usepackage" except for \verb"\usepackage{asp2023}". (See LaTeX packages and commands.)
-\item No use of \verb"\renewcommand" or \verb"\renewenvironment". (See LaTeX packages and commands.)
-\item Arguments to \verb"\citep" etc., should use ADS type references where possible, fall back on <author><year> or something suitably unique if not. (See References.)
-\item References in the text are all generated automatically (using \verb"\citep" etc), not put in explicitly as ordinary text that just looks like a generated reference. (See References.)
-\item Definitely no LaTeX errors. (See LaTeX warnings and errors.)
-\item Paper is the right length. References don't spill over into one more page. (See Length of Paper.)
-\item Paper has an abstract. (See Length of Paper.)
-\item References are to things that actually exist and can be expected to continue to exist. Not papers ``in preparation'' or URLs for blog items. (See References.)
-\item Graphics files have to be .eps encapsulated Postscript format. Yes they do! Sorry, but they do. (See Figures.)
-\item Name all the files properly:- figures are <paper>\_f<n>.eps, eg O1-3\_f1.eps. Paper names use dashes not periods, O1-3.tex not O1.3.tex. Posters now use the same naming convention as oral papers, e.g.\ X3-21. (See File names and Paper IDs.)
-\item Figure captions should make sense if the figure is printed in monochrome - because it will be! (See Figures.)
-\item Figures are legible at the size ADASS Proceedings volumes are printed, which is quite small. (See Figures.)
-\item Copyright forms signed and filled out - don't use electronic signatures. (See Miscellany.)
-\item Author lists follow the correct format: comma separated, with an `and' for the final author. (See Authors and Affiliations.)
-\item The first author of the paper must be the person who presented the paper at the conference. (See Authors and Affiliations.)
-\item No repetition of affiliations - list each organisation once, with multiple e-mail addresses if you really must. (See Authors and Affiliations.)
-\item Running heads should fit in the same horizontal space as the text does, not pushing the page numbers over to the right. (See LaTeX warnings and errors.)
-\item Run through a spelling checker. (I know that can be tricky with LaTeX.) (See Content and Typesetting.)
-\item Proofread, or have the text proofread, to check for proper English usage. In particular, note that ``allows to'' is not conventional English, and English uses articles (`a',`an',`the') in places where other languages, particularly Eastern European languages, don't have them. (See Content and Typesetting.)
-\end{itemize}
+The archive notes build on the IVOA discovery mechanisms (the registry, service capabilities, and \texttt{TAP\_SCHEMA}, which the tools still query at run time) and add what these do not express. ALMA tables, for instance, list each dataset once per spectral window, so a count of observations must count distinct data\-sets; Astro Data Lab requires its own \texttt{q3c} functions for positional queries. Each note carries a check: an ADQL query with an expected outcome, a test that named columns still exist, or, for the 36 of 74 notes that no single query can test, a flag for review by hand. A weekly note audit runs the automated checks against the live archives and opens an issue for any note that no longer holds.
 
-\section{Compiling}
-It is highly recommended that all figures be non-`eps' format, i.e., `png' or `jpg.'  For this case, compiling this article is done simply by using the command \texttt{pdflatex} at least twice on the command line from inside the same folder as the article LaTeX `.tex' file.  If there are references to `eps' image files, pdfLaTeX will not work, and the images should be converted to a non-`eps' type of image file format.
+MANNA includes notes for seven archives from radio to optical wavelengths, most fully for NOIRLab's Astro Data Lab \citep{2020A&C....3300411N}, the ALMA Science Archive \citep{2025ASPC..538..206S}, and the NRAO Science Data Archive, which at NRAO's request MANNA has not queried by default since September 2026, while its TAP service is rebuilt.
 
-\section{Text}
-Sometimes you just need to have different styles of fonts.  \emph{Sometimes you just need to have different styles of fonts.} \textbf{Sometimes you just need to have different styles of fonts.}
+\section{Evaluation and Results}
+\label{sec:eval}
+We measured MANNA's effect with a custom evaluation framework, distributed with the code, that runs Claude Code \citep{claudecode} in headless mode with the model under test and records every tool call. Each task pairs a request with a grading specification: the tools that must appear among the calls, constraints on their arguments, and either a ground-truth answer or, for open-ended questions, a rubric scored by a judge model.
 
-Sometimes you just need to have different sizes of fonts.  {\small Sometimes you just need to have different sizes of fonts.} {\footnotesize Sometimes you just need to have different sizes of fonts.}  It would be very rare to require larger fonts within an ASP volume.
+The tool-use evaluation (Program I) tests whether a model uses MANNA's tools correctly. The value-added measurement (Program II) runs a separate set of 26 tasks, such as counting the distinct ALMA observations of NGC 253, with MANNA and without it; without MANNA the agent keeps Claude Code's built-in tools for shell commands and web access.
 
-Do \emph{not} reduce the size of the main text font to try to squeeze more content into the paper. It will be restored by the editors and the paper will be rejected as too long.
+We ran both programs on MANNA v0.10.0 through Claude Code in September 2026 with Anthropic's Haiku 4.5 \citep{Anthropic2025haiku45}, Sonnet 5 \citep{Anthropic2026sonnet5}, and Opus 4.8 \citep{Anthropic2026opus48}, and NVIDIA's open-weight Nemotron 3 Super model \citep{2026arXiv260412374N}, which we hosted ourselves and also used as the judge. Sonnet 5 and Opus 4.8 ran at Claude Code's default effort level, \texttt{high}. Costs are Claude Code's estimates at list prices; the self-hosted Nemotron 3 Super has no comparable cost. Program II tasks were allowed 1 hour and 200 turns, and each model and condition was run three times; we also made one capped run of each, limited to 600 seconds and 20 turns per task. Program I was run once per model. Because the NRAO archive is paused, we ran only the 14 of 26 Program I tasks and 23 of 26 Program II tasks that do not need it. All results are archived on Zenodo \citep{manna2026evals}.
 
-\section{Math}
-Sometimes authors include formulas inside the main text which should always be enclosed within \$ signs.  Look at the Pythagorean Formula $a^2 + b^2 = c^2$.
+In Program I, Sonnet 5 and Opus 4.8 passed all 14 tasks and Haiku 4.5 and Nemotron 3 Super passed 12. Table~\ref{tab:p2} summarizes Program II. Without limits, every model except Haiku passed nearly all tasks with or without MANNA, and MANNA's effect was mainly on the work needed per solved task: without it, Nemotron made 15.5 times as many tool calls and took 8.1 times as long. For Haiku, MANNA also changed the outcome: it passed 21.7 of 23 tasks on average with MANNA and 15.0 without.
 
-Sometimes authors include formulas on their own lines.  This example uses the \verb"displaymath" environment which does not include an equation number.  To include an equation number, use the \verb"equation" environment.
-\begin{displaymath}
-c = \sqrt{a^2 + b^2} \qquad \textrm{Pythagorean Theorem}
-\end{displaymath}
-
-\section{Lists}
-\label{ex_lists}
-There are a lot of ways to make lists including itemized lists with bullets, for which you use  (\verb"\begin{itemize}"), numbered lists (\verb"\begin{enumerate}"), and description lists (\verb"\begin{description}").  This is an example of an itemized list.
-
-\subsection{Itemized Lists}
-Here is an itemized list:
-\begin{itemize}
-\item Item 1
-\item Item 2
-\end{itemize}
-
-
-\section{Table}
-Here is an example table that has three colums with various justification and row spacing.
-
+% Values: n3-summary.md (2026-09-22-subset-evals), uncapped means, per-solved-task
+% multipliers, and the 600 s / 20-turn capped table; also AAS Tables 4 and 6.
 \begin{table}[!ht]
-\caption{Tables in \LaTeXe}
+\caption{Program II through Claude Code. Tasks passed (of 23) are means of three uncapped runs (1\,h and 200 turns per task) or one capped run (600\,s and 20 turns). The last three columns are ratios per solved task, without MANNA to with it, in the uncapped runs; values above 1 favor MANNA.}
+\label{tab:p2}
 \smallskip
 \begin{center}
 {\small
-\begin{tabular}{llc}  % l = left, c = centered
+\begin{tabular}{lccccccc}
 \tableline
 \noalign{\smallskip}
-First Column & Second Column & Third Column:\\
+ & \multicolumn{2}{c}{Uncapped} & \multicolumn{2}{c}{Capped} & \multicolumn{3}{c}{Per solved task}\\
+Model & With & Without & With & Without & Calls & Time & Cost\\
 \noalign{\smallskip}
 \tableline
 \noalign{\smallskip}
-First Row, First Column & First Row, Second Column & First Row, Third Column \\
-Second Row, First Column & Second Row, Second Column & Second Row, Third Column \\
-Third Row, First Column & Third Row, Second Column & Third Row, Third Column \\
+Nemotron 3 Super & 21.0 & 20.3 & 22 & 12 & 15.5$\times$ & 8.1$\times$ & --\\
+Haiku 4.5        & 21.7 & 15.0 & 22 & 14 & 3.1$\times$  & 2.3$\times$ & 6.7$\times$\\
+Sonnet 5         & 22.0 & 21.3 & 23 & 18 & 1.1$\times$  & 2.2$\times$ & 1.3$\times$\\
+Opus 4.8         & 23.0 & 23.0 & 23 & 20 & 2.3$\times$  & 3.4$\times$ & 2.4$\times$\\
 \noalign{\smallskip}
-\tableline % Sometimes you just need a line between table rows
-\noalign{\smallskip}
-Fourth Row, First Column & ~ & Fourth Row, Third Column \\ % Sometimes you have empty cells
-\noalign{\smallskip} % Sometimes you just need space between table rows
-Fifth Row First Column & Fifth Row, Second Column & Fifth Row, Third Column\\ % No \\ if the last row
-\noalign{\smallskip}
-\tableline\
+\tableline
 \end{tabular}
 }
 \end{center}
 \end{table}
-\noindent These tables can get a little messy, but this format is the most common.
 
-\section{Images}
-For some figures, see Figures \ref{ex_fig1}- \ref{ex_fig3}.
+The difference was largest under the capped limits. Without MANNA the models passed 12 to 20 of the 23 tasks and reached a limit on 3 to 11 of them; with MANNA they passed 22 or 23 and reached a limit on none.
 
-These figures have been converted to the `png' image format.  Notice
-that the references to the figures do not need to include the file
-extension and that the pdfLaTeX compiler recognizes the non-`eps'
-image files.
+\section{Discussion and Conclusions}
+\label{sec:discussion}
+MANNA narrowed the differences between models: with it, all four passed 21.0 to 23.0 of 23 tasks; without it, 15.0 to 23.0. Haiku 4.5 with MANNA passed 21.7 tasks for \$0.98 in total; Opus 4.8 without it passed all 23 for \$8.84. A smaller model with MANNA is therefore a practical alternative to a larger model without it.
 
- 
-\articlefigure[width=0.65\textwidth]{example.jpg}{ex_fig1}{Welcome to 1365.  Size adjusted to be a little smaller than full.}
-% It is possible to reduce the size of a figure among other changes (see the instructions).  Here is an example:
-% \articlefigure[width=.5\textwidth]{example_image}{ex_fig1_reduced}{Welcome to 1953 a little smaller.}
+The evaluation has limitations: Program II covers basic uses of archives, which a capable model can often handle by querying the services directly; each condition was run three times and the capped runs once; and the judge was itself a model under test.
 
-\articlefiguretwo{example}{example}{ex_fig2}{Now there are two of them.  \emph{Left:} An image from long ago.  \emph{Right:} The same exact thing.}
-% There is a figure command allowing for three figures:
-% \articlefigurethree{example.eps}{example.eps}{example.eps}{ex_fig1_triple}{Now there are three of them.}
+\emergencystretch=1.5em
+MANNA is documented at \url{https://manna.readthedocs.io}; it is open source under the MIT license \citep{manna2026repo} and on PyPI as \texttt{manna-mcp}. We encourage both the local use of MANNA by astronomers and its integration into astronomical applications and platforms, and we welcome the integration of additional IVOA-based archives via developer contributions to the repository.
+\par\emergencystretch=0pt
 
-\articlefigurefour{example}{example}{example}{example}{ex_fig3}{Now four of them?}
-
-\clearpage % To force this stuff to happen by this point in the text, otherwise these will probably end up after the references.
-
-There are also the landscape versions \verb"\articlelandscapefigure" and \\
-\verb"\articlelandscapefiguretwo" which are further described in the instructions.
-
-\section{References}
-References must be provided in BibTeX format, in a .bib file, and should usually be referenced using \verb"\citet" or \verb"\citep". The file example.bib supplied with this template is taken from an ADASS 2015 paper, and includes references to previous ADASS proceedings 
-\citep[such as][]{1999ASPC..172..487P} and to papers in what was then the current 2015 proceedings (e.g.\ \citet{O11-4_adassxxv}). Note that the `TBD' entries that appear for papers in the current proceedings will be dealt with by the ADASS editors when the final volume is produced. The example .bib file has a large number of references unused by this template file; such unused references have been left in as an example, but should be removed before a paper is submitted.
-
-\section{Conference Photographs}
-
-At the end of this template you may find a commented line with the bookpartphoto where the editors could decided to add a conference photo,
-might there be enough room at the end of your paper. Leave this comment in, do not supply your own photos in this paper but contact the editors
-if you have some interesting shots.
-
-\acknowledgements The ASP would like to thank the dedicated researchers who are publishing with the ASP.  It will make things a lot easier if you keep this text on the same line as the \verb"\acknowledgements" command. Place it just before the bibliography. It's optional of course.
-
+\acknowledgments This work was supported by the NSF-Simons AI Institute for Cosmic Origins (CosmicAI; NSF Cooperative Agreement 2421782 and Simons Foundation award MPS-AI-00010515). This research uses services or data provided by the Astro Data Lab, which is part of the Community Science and Data Center (CSDC) Program of NSF NOIRLab. NOIRLab is operated by AURA, Inc. under a cooperative agreement with the U.S. National Science Foundation. The National Radio Astronomy Observatory is a facility of the U.S. National Science Foundation operated under cooperative agreement by Associated Universities, Inc.
 
 \bibliography{P108}  % For BibTex
 
 % if we have space left, we might add a conference photograph here. Leave commented for now.
-% \bookpartphoto[width=1.0\textwidth]{foobar.eps}{FooBar Photo (Photo: Any Photographer)}
+% \bookpartphoto[width=1.0\textwidth]{foobar.jpg}{FooBar Photo (Photo: Any Photographer)}
 
 \end{document}
